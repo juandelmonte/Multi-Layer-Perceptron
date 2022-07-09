@@ -14,7 +14,7 @@ from main.utils import *
 from helpers.mnist import *
 
 
-##DataSet -> https://www.kaggle.com/datasets/oddrationale/mnist-in-csv 
+##DataSet -> https://drive.google.com/drive/folders/121IvgXaUqL3iQ5v5EJWmcaHK7gQP8AaJ?usp=sharing
 
 #train
 filename = os.path.join(currentdir, 'data\\mnist_train.csv')
