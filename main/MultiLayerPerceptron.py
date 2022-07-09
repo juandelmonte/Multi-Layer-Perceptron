@@ -25,7 +25,7 @@ class layer(object):
 
 #Numpy MLP
 class MLP(object):
-    def __init__(self, structure, name = 'MLP'):
+    def __init__(self, structure, name = 'MLP', weights_multiplier = 0.1):
         self.name = name
 
         self.layers = []
@@ -42,7 +42,7 @@ class MLP(object):
             layer_n = structure[a]
             n_inputs = structure[a-1]
 
-            W = np.matrix([[random.random()*0.1 for _ in range(n_inputs)] for __ in range((layer_n))])
+            W = np.matrix([[random.random() * weights_multiplier for _ in range(n_inputs)] for __ in range((layer_n))])
             self.layers.append(layer(np.array([0 for _ in range(layer_n)]),W))
 
         self.lastLayer = self.layers[-1]
@@ -166,7 +166,7 @@ class MLP(object):
 
         cost_init = self.getCost()
         for i in range(iterations): 
-            for sampled_input, sampled_output in sample(IN,OUT,n_samples, replacement): # in case of replacement = False (minibatch) iterations is epocs, cause replacement = False will yeild all miniatches
+            for sampled_input, sampled_output in sample(IN,OUT,n_samples, replacement): # in case of replacement = False (minibatch) iterations is epocs
                 self.setData(sampled_input,sampled_output)
                 cost_init_loop = self.getCost()  #getCost is applying feedforward
                 self.backwardprop()
