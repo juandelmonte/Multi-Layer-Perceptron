@@ -2,6 +2,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 import random
 
+def hyperbolictan(x, derivative = False):
+    if not derivative:
+        return np.tanh(x)
+    else:
+        return 2/(np.cosh(2*x)+1)
+
+def elu(x, derivative = False):
+    pass
+
 def logistic(x: np.array, derivative = False):
     if not derivative:
         return 1/(1+np.exp(-x))
@@ -37,16 +46,6 @@ def cross_entropy(a, y, derivative = False):
         return -(y*np.log(a)+(1-y)*np.log(1-a))
     else:
         return -1*((a-y)/((a-1)*a))
-
-def normalize_linear(array:list):
-	max = np.max(array)
-	min = np.min(array)
-	diff = max-min
-
-	result = []
-	for a in array:
-		result.append((a-min)/diff)
-	return result
 
 def sample(a, b, N=10, replacement = True): # not replacement : minibatch
     if replacement:

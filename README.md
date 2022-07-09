@@ -1,6 +1,6 @@
 # Multi Layer Perceptron (MLP)
 
-This fully connected MLP started as a way of understanding the core principles behind Artificial Neural Netwoks. 
+This fully connected MLP started as a way of understanding the core principles behind Artificial Neural Netwoks, mainly backpropagation.
 
 It's written using mainly numpy objects. 
 

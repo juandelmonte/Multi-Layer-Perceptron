@@ -29,18 +29,18 @@ df=(df-df_means)/(df_stds)
 
 #set training and validation data
 input, output = encode(df,'resistance')
-input_training, output_training, input_validation, output_validation = generate_samples(input, output,4)
+input_training, output_training, input_validation, output_validation = generate_samples(input, output,5)
 
 # %%
 model = MLP([6,4,1])
-model.save('init')
+#model.layers[-2].activation = hyperbolictan
 
 model.setData(input_validation,output_validation)
 print('cost of validation data: ',model.getCost())
 
 # %%
 model.setData(input_training,output_training)
-model.train(10000,1000,15)
+model.train(10000,1000,10)
 
 model.setData(input_validation,output_validation)
 print('cost of validation data: ',model.getCost())
@@ -65,8 +65,6 @@ std_resistance = df_stds['resistance']
 
 output_predicted=[a[0]*std_resistance+mean_resistance for a in model.layers[-1].a]
 
-#model.save('')
-
 r2=rSquared(output_real,output_predicted)
 pylab.plot(output_real,output_predicted, 'bo')
 a =[a for a in range(65)]
@@ -79,7 +77,6 @@ pylab.savefig(currentdir+'\\output\\YatchDesignResistanceRegression.jpg')
 pylab.show()
 
 
-# %%
-model.save('Anomaly detection final model ')
+
 
 
