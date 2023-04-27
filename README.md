@@ -1,43 +1,19 @@
 # Multi Layer Perceptron (MLP)
 
-This fully connected MLP started as a way of understanding the core principles behind Artificial Neural Netwoks, mainly backpropagation.
+As an engineer with a strong interest in data science and analytics, I added a Multi-Layer Perceptron (MLP) model to my portfolio using state-of-the-art numerical computing with the numpy library. MLPs are a fascinating type of Artificial Neural Network that have numerous applications in machine learning and artificial intelligence systems.
 
-It's written using mainly numpy objects. 
+What I find particularly interesting about MLPs is their ability not only to make accurate predictions but also to identify patterns in the data, which comes first can help enhance our understanding of it and improve our analytical capabilities.
 
-For those trying to understand them there's plenty of material explaining what they are and how they are being used, I'm not trying to cover that but if you are one of them I hope at least it gets to be helpful in your journey.
+My primary goal for creating this MLP code was to gain a deeper understanding of the fundamental principles behind Artificial Neural Networks, such as backpropagation, stochastic gradient descent (SGD), and statistical approaches for evaluating models on unknown data. However, I also wanted to showcase the things that can be achieved with MLPs in machine learning, delivering value to society and enhancing business processes when applied propperly.
 
-Furthermore, I want to showcase some of its applications. I plan to use this kind of model throughout my professional activity and think this could potentially be helpful by bringing clarity and preventing them from being used as black boxes.
+I've used MLPs to solve several challenging machine learning problems, including handwriting recognition and predicting the resistance (drag) of different yacht designs, which is another approach to classical engineering computations. I also tackled the classic Kaggle problem of bank fraud by building an autoencoder and classifying transactions based on the reconstruction of errors.
 
-## Machine Learning
+It's thrilling to see the MLP improve with experience by producing more accurate classification models and regression outputs that are closer to real values. But to ensure that the model generalizes well on unknown data, evaluation and statistical approaches are crucial.
 
-In the examples the MLP will be used to solve some machine learning problems.
+One of the most fascinating aspects of MLPs is the feedforward method, where the input is transformed into an output using a set of functions that are applied sequentially or nested functions. This approach produces a set of transformations that are made to the input.
 
-MLPs are an important component of Machine learning and AI systems and its applications can be explained through mathematical optimization, applied-statistics (and linear algebra).
+To train the MLP, I utilized stochastic approximation of gradient descent optimization, moving in the opposite direction of the gradient of a cost function to make the MLP produce outputs that are closer to the desired outputs. Instead of using the entire dataset to train the MLP, random samples can be used, making it stochastic and improving performance and generalization.
 
-I like the formal definition of Tom M. Mitchell "A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P if its performance at tasks in T, as measured by P, improves with experience E." (Wikipedia).
+Finally, the backward propagation of errors uses the gradient with derivatives and the chain rule to update the weights and biases in the MLP. This technique provides a fascinating and exciting journey into the world of machine learning, where we explore the intersection of mathematics, statistics, and computer science.
 
-You will see how MLP weights and bias change when they are trained with data, the MLP improves with experience, by being more accurate in classification models or simply by producing outputs closer to the real values we want to get in regression models.
-
-Remember that we want to generalize to unknown data, we want the model to be good at predicting from data it did not see or was trained with before. Evaluation might also require some statistical approach.
-
-## Feedforward
-
-To produce the output, a set of transformations are made to the input. This is done in the feedforward method. In this model every node in a layer has the same activation function, then it's simpler to work with numpy matrices and arrays.
-
-## Stochastic approximation of gradient descent optimization
-
-A gradient can be thought of as a vector pointing to where some function grows faster.
-
-A cost function can be thought of as the difference between the MLP output and the output we want it to have.
-
-By moving (small steps) towards the opposite direction of the gradient of a cost function we are making the MLP produce outputs closer to the ones we want it to have. When the MLP is training it's updating its weights (W) and biases (b) to do so. The output of the MLP is actually a function of the input and these W and b, in deep neural networks this is a set of functions that are being applied sequentially or nested functions.
-
-If instead of using the entire dataset random samples are used to train the MLP, then it's known as stochastic. This technique improves performance and can also improve generalization.
-
-## Backward Propagation of Errors
-
-A layer's output will be a function of its W, b and inputs.
-
-Errors can be propagated as the input of a layer is the output of the previous layer.
-
-The gradient is explained with derivatives and the chain rule is applied.
+Overall, working with MLPs is a thrilling experience, and I'm excited to add this code to my portfolio. If you're looking for an exciting challenge, let's dive in and have some fun exploring the world of MLPs!
