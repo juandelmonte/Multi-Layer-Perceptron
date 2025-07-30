@@ -1,6 +1,6 @@
 import random
 import numpy as np
-from main.utils import *
+from .utils import *
 import json
 import os
 dirname = os.path.dirname(__file__)
@@ -168,7 +168,10 @@ class MLP(object):
         for i in range(iterations): 
             for sampled_input, sampled_output in sample(IN,OUT,n_samples, replacement): # in case of replacement = False (minibatch) iterations is epocs
                 self.setData(sampled_input,sampled_output)
-                cost_init_loop = self.getCost()  #getCost is applying feedforward
+                if i%evaluation_loop==0: 
+                    cost_init_loop = self.getCost()  #getCost is applying feedforward
+                else:
+                    self.feedforward()
                 self.backwardprop()
                 if i%evaluation_loop==0: # I actually don't want to do this every step eg.-> if i%100==0
                     cost_end_loop = self.getCost()
