@@ -1,17 +1,13 @@
 # %%
 import os
-import sys
-import inspect
-
-currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-parentdir = os.path.dirname(currentdir)
-sys.path.insert(0, parentdir) 
-
 import pandas as pd
 from matplotlib import pylab
-from main.MultiLayerPerceptron import MLP
+from main import MLP
 from main.utils import *
 from helpers.YatchDesign import *
+
+
+currentdir = os.path.dirname(os.path.abspath(__file__))
 
 # %%
 df_total = pd.read_csv(currentdir+'\\data\\yacht_hydrodynamics.csv',sep=';')

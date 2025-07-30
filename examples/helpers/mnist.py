@@ -2,8 +2,8 @@ import random
 import numpy as np
 
 def encode(df):
-    df_out = df[0]
-    df_in = df.drop([0],axis=1)
+    df_out = df['label']
+    df_in = df.drop(['label'],axis=1)
 
     normalized_df_in=df_in/255
 
